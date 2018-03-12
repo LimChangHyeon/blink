@@ -35,7 +35,7 @@ void loop()
 
 void connectWifi()
 {
-  Serial.print("try to connect " + *SSID);
+  Serial.print("try to connect server");
   WiFi.begin(SSID, PWD);
   while(WiFi.status() != WL_CONNECTED)
   {
