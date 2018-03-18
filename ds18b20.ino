@@ -46,14 +46,21 @@ void setup()
 void loop()
 {
   float temp;
+  unsigned long prevTime;
+  unsigned long elapsedTime;
   tpSensor.requestTemperatures();
   temp = tpSensor.getTempCByIndex(0);
   Serial.print("Temperature : ");
   Serial.println(temp);
 
+  prevTime = (unsigned long)millis();
   sendTemperature(temp);
+  elapsedTime = (unsigned long)millis() - prevTime;
 
-  delay(LOOP_DELAY);
+  if(elapsedTime <= (unsigned long)LOOP_DELAY)
+  {
+    delay(LOOP_DELAY - elapsedTime);
+  }
 }
 
 void connectWifi()
