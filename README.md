@@ -19,4 +19,4 @@ Turned off the LED and waits for input milliseconds.
 
 # ds18b20
 receive temperature data from ds18b20 temperature sensors
-and send data to thingspeak.com
+and send data to thingspeak.com / ifttt.com / aws db server
